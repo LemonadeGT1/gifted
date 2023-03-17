@@ -5,6 +5,7 @@ export class Gift {
     this.id = data.id
     this.tag = data.tag
     this.url = data.url
+    this.embed_url = data.embed_url || 'https://media.giphy.com/media/l0O9zKrd7InZvso5W/giphy.gif'
     this.opened = data.opened
   }
 
@@ -24,7 +25,7 @@ export class Gift {
 
   get giphyTemp() {
     return `
-    <div class="card p-1 img-fluid w-25">
+    <div class="card p-1 img-fluid w-25 col-3 m-1">
       <img src="${this.url}">
     </div>
       `

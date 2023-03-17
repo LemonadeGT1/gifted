@@ -23,6 +23,7 @@ export class GiphysController {
       let searchText = document.getElementById('searchText')
       console.log('get Giphys', searchText?.value)
       giphysService.getGiphys(searchText.value)
+      appState.emit('allGiphys')
     } catch (error) {
       console.log(error)
       Pop.error(error)

@@ -10,11 +10,13 @@ class GiphysService {
     const res = await giphyApi.get('search', {
       params: {
         rating: 'pg',
-        limit: 10,
+        limit: 15,
         q: searchText
       }
     })
     console.log(res.data.data);
+    appState.allGiphys = res.data.data.map(g => new Gift(g))
+    console.log('appState.allGiphys: ', appState.allGiphys);
   }
 
 }
